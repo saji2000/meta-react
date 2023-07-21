@@ -1,11 +1,14 @@
 import { useState } from "react";
-
-function Header() {
-  return <h1 className="text-primary">My Header</h1>;
-}
+import Nav from "./components/Nav";
+import Promo from "./components/Promo";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Nav />
+      <Promo />
+    </>
+  );
 }
 
 export default App;
