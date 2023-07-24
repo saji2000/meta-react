@@ -4,8 +4,12 @@ interface Input {
 }
 
 function Promo({ children, price }: Input) {
+  const styles = {
+    backgroundColor: "tomato",
+  };
+
   return (
-    <div className="promo-section">
+    <div className="promo-section" style={styles}>
       <div>
         <h1>Don't miss this deal only for {price}!</h1>
       </div>
