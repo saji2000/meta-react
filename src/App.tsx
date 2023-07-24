@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Nav />
-      <Promo>Here is our deal</Promo>
+      <Promo price={100}>Here is our deal</Promo>
     </>
   );
 }
