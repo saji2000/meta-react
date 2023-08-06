@@ -11,7 +11,7 @@ function Promo({ children, price }: Input) {
   return (
     <div className="promo-section" style={styles}>
       <div>
-        <h1>Don't miss this deal only for {price}!</h1>
+        <h1>Guess a number between 1 and 3</h1>
       </div>
       <div>
         <h2>{children}</h2>
