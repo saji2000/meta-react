@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Form = () => {
   const [form, setForm] = useState({
@@ -13,6 +13,10 @@ const Form = () => {
       ...prevForm,
       [name]: value,
     }));
+  };
+  const inputElement = useRef<HTMLInputElement>(null);
+  const focus = () => {
+    inputElement.current!.focus();
   };
 
   return (
@@ -43,6 +47,8 @@ const Form = () => {
           {form.firstName}, {form.lastName}, {form.email}
         </p>
       </form>
+      <input ref={inputElement} type="text"></input>
+      <button onClick={focus}>Click to focus</button>
     </>
   );
 };
