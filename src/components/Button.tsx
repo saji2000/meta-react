@@ -6,6 +6,7 @@ function Button() {
   const handleChanges = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
+
   return (
     <>
       <input value={inputText} onChange={handleChanges}></input>
