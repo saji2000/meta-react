@@ -1,21 +1,24 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
-import Promo from "./components/Promo";
-import Card from "./components/Card";
-import Button from "./components/Button";
-import Form from "./components/Form";
+// import Promo from "./components/Promo";
+// import Card from "./components/Card";
+// import Button from "./components/Button";
+// import Form from "./components/Form";
+import Fruits from "./components/Fruits/Fruits";
+import FruitsCounter from "./components/Fruits/FruitsCounter";
 
 function App() {
+  const [fruits] = useState([
+    { fruitName: "apple", id: 1 },
+    { fruitName: "apple", id: 2 },
+    { fruitName: "plum", id: 3 },
+  ]);
   return (
     <>
       <Nav />
-      {/* <Promo price={100}>Here is our deal</Promo>
-      <h1>Task: Add three Card elements</h1>
-      <Card h2="First card's h2" h3="First card's h3" />
-      <Card h2="Second card's h2" h3="Second card's h3" />
-      <Card h2="Third card's h2" h3="Third card's h3" /> */}
-      <Button />
-      <Form />
+      <h1>Where should the state go?</h1>
+      <Fruits fruits={fruits} />
+      <FruitsCounter fruits={fruits} />
     </>
   );
 }
