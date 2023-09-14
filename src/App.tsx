@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
 import qr from "./assets/images/QR.png";
 import List from "./components/List";
+import Form from "./components/Form";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Nav />
       <img height={200} src={qr} alt={"QR code for dicord"} />
       <List />
+      <Form />
     </>
   );
 }

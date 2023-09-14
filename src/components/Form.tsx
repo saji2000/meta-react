@@ -1,18 +1,10 @@
 import { useRef, useState } from "react";
 
 const Form = () => {
-  const [form, setForm] = useState({
-    firstName: "John",
-    lastName: "Smith",
-    email: "johnsmith1234@gmail.com",
-  });
+  const [value, setValue] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
+    setValue(e.target.value);
   };
   const inputElement = useRef<HTMLInputElement>(null);
   const focus = () => {
@@ -22,30 +14,14 @@ const Form = () => {
   return (
     <>
       <form>
-        <label>First Name: </label>
+        <label>Name: </label>
         <input
           type="text"
-          name="firstName"
-          value={form.firstName}
+          name="name"
+          value={value}
           onChange={handleChange}
         ></input>
-        <label> Last Name: </label>
-        <input
-          type="text"
-          name="lastName"
-          value={form.lastName}
-          onChange={handleChange}
-        ></input>
-        <label> Email: </label>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-        ></input>
-        <p>
-          {form.firstName}, {form.lastName}, {form.email}
-        </p>
+        <p>{value}</p>
       </form>
       <input ref={inputElement} type="text"></input>
       <button onClick={focus}>Click to focus</button>
