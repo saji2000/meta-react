@@ -1,0 +1,4 @@
+/* Custom CSS */
+.limited-width {
+    max-width: 300px; /* Adjust the value as needed */
+}
