@@ -2,3 +2,8 @@
 .limited-width {
     max-width: 300px; /* Adjust the value as needed */
 }
+
+.required {
+    color: red;
+    margin-left: 4px;
+}

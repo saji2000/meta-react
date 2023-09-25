@@ -1,5 +1,4 @@
 import { Link, Routes, Route } from "react-router-dom";
-import Promo from "./Promo";
 import Form from "./Form";
 
 function Nav() {
@@ -13,10 +12,6 @@ function Nav() {
           Form
         </Link>
         <Routes>
-          <Route
-            path="/"
-            element={<Promo price={10.0}>Placeholder text</Promo>}
-          />
           <Route path="/Form" element={<Form />} />
         </Routes>
       </ul>
