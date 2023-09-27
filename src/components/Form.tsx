@@ -8,10 +8,6 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setValue(e.target.value);
-  // };
-
   const validForm = () => {};
 
   const handleSubmit = (e: React.FormEventHandler<HTMLFormElement>) => {};
