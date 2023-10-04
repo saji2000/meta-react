@@ -8,14 +8,36 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const validForm = () => {};
+  const validForm: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (e: React.FormEventHandler<HTMLFormElement>) => {};
+    // First Name validation
+    if (firstName.length < 1) {
+      alert("Please enter your first name");
+      return;
+    }
+
+    // Email validation
+    const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailIsValid) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    // Password strength validation (you can use a library like zxcvbn)
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters");
+      return;
+    }
+
+    // If all validations pass
+    alert("Success");
+  };
 
   return (
     <>
       <div className="container-xxl pt-3 border rounded border-dark-subtle">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={validForm}>
           <div className="mb-3">
             <label className="form-label">
               First Name: <span className="required">*</span>
@@ -68,6 +90,9 @@ const Form = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="form-control limited-width"
             ></input>
+            {password.length < 8 ? (
+              <p className="required">Password must be at least 8 characters</p>
+            ) : null}
           </div>
 
           <div className="mb-3">
