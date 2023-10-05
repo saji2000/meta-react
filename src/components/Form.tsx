@@ -8,6 +8,14 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
+  const clearForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setRole("");
+  };
+
   const validForm: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
@@ -32,6 +40,7 @@ const Form = () => {
 
     // If all validations pass
     alert("Success");
+    clearForm();
   };
 
   return (
