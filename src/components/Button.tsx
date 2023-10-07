@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Implementation of a button
 function Button() {
   const [inputText, setText] = useState<string>("");
 
