@@ -8,6 +8,8 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
+  var passwordIsSet = false;
+
   const clearForm = () => {
     setFirstName("");
     setLastName("");
@@ -35,6 +37,7 @@ const Form = () => {
     // Password strength validation (you can use a library like zxcvbn)
     if (password.length < 8) {
       alert("Password must be at least 8 characters");
+      passwordIsSet = true;
       return;
     }
 
@@ -99,7 +102,7 @@ const Form = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="form-control limited-width"
             ></input>
-            {password.length < 8 ? (
+            {passwordIsSet ? (
               <p className="required">Password must be at least 8 characters</p>
             ) : null}
           </div>
