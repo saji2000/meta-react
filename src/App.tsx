@@ -5,7 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      <Form />
+      <form onSubmit={() => alert("Submitting")}>
+        <input type="button" value="Submit" />
+      </form>
+      {/* <Form /> */}
     </>
   );
 }
